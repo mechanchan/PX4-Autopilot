@@ -1,24 +1,23 @@
 #!/bin/sh
 #
-# @name Generic Quadplane VTOL Tiltrotor
+# @name Hexa Y6 Tilt copter
 #
-# @type VTOL Tiltrotor
-# @class VTOL
+# @type Hexarotor Coaxial
+# @class Copter
 #
-# @maintainer
+# @maintainer Soongsil UNIV. IMS Lab. Drone-Team <alphago@soongsil.ac.kr>
 #
-# @output MAIN1 motor 1
-# @output MAIN2 motor 2
-# @output MAIN3 motor 3
-# @output MAIN4 motor 4
+# @output MAIN1 front right top, CW; angle:60; direction:CW
+# @output MAIN2 front right bottom, CCW; angle:60; direction:CCW
+# @output MAIN3 back top, CW; angle:180; direction:CW
+# @output MAIN4 back bottom, CCW; angle:180; direction:CCW
+# @output MAIN5 front left top, CW; angle:-60; direction:CW
+# @output MAIN6 front left bottom, CCW;angle:-60; direction:CCW
+#
 # @output AUX1 Motor tilt front left
 # @output AUX2 Motor tilt front right
-# @output AUX3 Motor tilt rear left
-# @output AUX4 Motor tilt rear right
-# @output AUX5 Aileron left
-# @output AUX6 Aileron right
-# @output AUX7 Elevator
-# @output AUX8 Rudder
+# @output AUX3 Motor front wheel left
+# @output AUX4 Motor front wheel right
 #
 # @board px4_fmu-v2 exclude
 # @board bitcraze_crazyflie exclude
@@ -26,7 +25,8 @@
 
 . ${R}etc/init.d/rc.vtol_defaults
 
-
+# param Custom Required
+# https://docs.px4.io/master/en/config_vtol/vtol_back_transition_tuning.html
 param set-default PWM_MAIN_RATE 400
 
 param set-default VT_IDLE_PWM_MC 1100
@@ -35,7 +35,8 @@ param set-default VT_MOT_ID 1234
 param set-default VT_FW_MOT_OFFID 24
 set MAV_TYPE 21
 
-set MIXER quad_x
-set MIXER_AUX vtol_TTTTAAER
+set MIXER hexa_cox
+# Mixer Custom Required
+# set MIXER_AUX vtol_TTTTAAER
 
-set PWM_OUT 1234
+set PWM_OUT 12345678

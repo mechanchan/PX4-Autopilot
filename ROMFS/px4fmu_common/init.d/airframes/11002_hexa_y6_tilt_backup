@@ -1,0 +1,55 @@
+#!/bin/sh
+#
+# @name Hexa Y6 Tilt copter
+#
+# @type Hexarotor Coaxial
+# @class Copter
+#
+# @maintainer Soongsil UNIV. IMS Lab. Drone-Team <alphago@soongsil.ac.kr>
+#
+# @output MAIN1 front right top, CW; angle:60; direction:CW
+# @output MAIN2 front right bottom, CCW; angle:60; direction:CCW
+# @output MAIN3 back top, CW; angle:180; direction:CW
+# @output MAIN4 back bottom, CCW; angle:180; direction:CCW
+# @output MAIN5 front left top, CW; angle:-60; direction:CW
+# @output MAIN6 front left bottom, CCW;angle:-60; direction:CCW
+#
+# @output AUX1 Motor tilt front left
+# @output AUX2 Motor tilt front right
+# @output AUX3 Motor front wheel left
+# @output AUX4 Motor front wheel right
+#
+# @board px4_fmu-v2 exclude
+# @board bitcraze_crazyflie exclude
+#
+
+. ${R}etc/init.d/rc.mc_defaults
+
+# param Custom Required
+# https://docs.px4.io/master/en/config_vtol/vtol_back_transition_tuning.html
+
+param set VT_MOT_COUNT 6 #엔진 혹은 모터의 갯수
+param set VT_FW_MOT_OFFID 3, 4 #수평 비행상태일때 반드시 꺼져야하는 모터의 위치
+param set VT_IDLE_PWM_MC 1200
+param set VT_TYPE 0 # VTOL 타입. 0=Tailsitter (꼬리로 이착륙 하는 형태), 1=틸트로터형, 2=Standard 형태
+param set VT_B_TRANS_DUR 1.0 # 이착륙 모드로 전환할 때 걸리는 시간(초)
+param set VT_FW_DIFTHR_EN 1 # 전진방향 비행시 출력 디퍼렌셜 적용 여부
+param set VT_FW_DIFTHR_SC 0.17 # 디퍼렌셜 출력의 스케일 게인: 러더 입력에 대한 출력 변화율
+param set VT_FW_PERM_STAB 1 # 전진방향 비행시 Stabilization 적용 여부: 1로 설정하면 전진 비행시 무조건 Stabilize가 적용됨
+param set VT_F_TRANS_DUR 1.2 # 전진방향 전환 시간(초) (최대 20초)
+param set VT_F_TR_OL_TM 4.0 # 대기속도 센서가 없을 경우 전진방향 전환 시간(초) (최대 30초)
+param set VT_TILT_FW 1.0 # 전진비행 시 틸트 서보의 위치 (0~1.0)
+param set VT_TILT_MC 0.0 # 수직비행 시 틸트 서보의 위치(0~1.0)
+param set VT_TILT_TRANS 0.45 # 전환 시 틸트 서보의 위치(0~1.0)
+param set VT_TRANS_MIN_TM 1.2 # 전진방향 전환 최소 시간(초) (0~20.0)
+param set VT_TRANS_P2_DUR 1.3 # 전진비행 2단계 전환 시간(초) (0.1~5.0) : 충분한 대기속도를 확보하여 고정익 항공기로
+# 비행이 가능해질때까지 로터가 완전히 전진 방향으로 회전하는데 걸리는 시간
+param set FW_ARSP_MODE 0 # 대기속도 모드: 0=노멀(가능하면 대기속도 사용), 1=대기속도 사용 안함
+set MAV_TYPE 20
+
+# Mixer
+set MIXER hexa_cox
+# Mixer Custom
+set MIXER quad_y6_vtol
+
+set PWM_OUT 12345678

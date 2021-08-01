@@ -23,7 +23,7 @@
 # @board bitcraze_crazyflie exclude
 #
 
-. ${R}etc/init.d/rc.mc_defaults
+. ${R}etc/init.d/rc.vtol_defaults
 
 # param Custom Required
 # https://docs.px4.io/master/en/config_vtol/vtol_back_transition_tuning.html

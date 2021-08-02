@@ -20,13 +20,12 @@
 
 
 param set-default VT_ELEV_MC_LOCK 0
-param set-default VT_MOT_COUNT 2
+param set-default VT_MOT_COUNT 4
 param set-default VT_TYPE 0
-# add FW_ARSP for test
 param set-default FW_ARSP_MODE 1
 
 param set-default MAV_TYPE 19
 set MAV_TYPE 19
-set MIXER vtol_tailsitter_duo
+set MIXER quad_y6_vtol
 
-set PWM_OUT 1234
+set PWM_OUT 123456

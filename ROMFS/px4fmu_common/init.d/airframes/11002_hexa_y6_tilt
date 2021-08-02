@@ -41,7 +41,7 @@ param set-default VT_TILT_MC 0.0
 param set-default VT_TILT_TRANS 0.45
 param set-default VT_TRANS_MIN_TM 1.2
 param set-default VT_TRANS_P2_DUR 1.3
-param set-default FW_ARSP_MODE 0
+# param set-default FW_ARSP_MODE 0
 set MAV_TYPE 20
 
 # Mixer

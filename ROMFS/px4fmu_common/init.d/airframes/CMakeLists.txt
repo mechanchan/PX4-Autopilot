@@ -141,6 +141,7 @@ px4_add_romfs_files(
 	13030_generic_vtol_quad_tiltrotor
 	13050_generic_vtol_octo
 	13200_generic_vtol_tailsitter
+	13250_test_vtol
 	13300_generic_vtol_tail_y6
 
 	# [14000, 14999] Tri Y

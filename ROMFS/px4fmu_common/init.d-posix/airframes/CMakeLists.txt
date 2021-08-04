@@ -79,4 +79,5 @@ px4_add_romfs_files(
 	6011_typhoon_h480.post
 	6012_typhoon_ctrlalloc
 	6012_typhoon_ctrlalloc.post
+	11002_hexa_y6_tilt
 )

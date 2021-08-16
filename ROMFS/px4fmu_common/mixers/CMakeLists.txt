@@ -55,8 +55,9 @@ px4_add_romfs_files(
 	fw_generic_wing.main.mix
 	FX79.main.mix
 	generic_diff_rover.main.mix
-	hexa_cox.aux.mix
+
 	hexa_cox.main.mix
+	hexa_cox.aux.mix
 	hexa_+.main.mix
 	hexa_x.main.mix
 	IO_pass.main.mix
@@ -99,4 +100,5 @@ px4_add_romfs_files(
 	vtol_tailsitter_duo.main.mix
 	vtol_tailsitter_test.main.mix
 	wingwing.main.mix
+
 )

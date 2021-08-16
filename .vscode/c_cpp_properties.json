@@ -3,13 +3,20 @@
         {
             "name": "PX4",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "/usr/include/ignition/math4",
+                "/usr/include/ignition/math4",
+                "/usr/include/ignition/math4",
+                "/usr/include/eigen3",
+                "/usr/include/eigen3",
+                "/usr/include/eigen3"
             ],
             "defines": [],
             "macFrameworkPath": [],
             "configurationProvider": "ms-vscode.cmake-tools",
             "cppStandard": "c++14",
-            "cStandard": "c11"
+            "cStandard": "c11",
+            "compilerPath": "/usr/bin/gcc"
         }
     ],
     "version": 4

@@ -1,927 +1,544 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com)
-     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
-     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
-<robot
-  name="hexa_y6_tilt">
-  <link
-    name="Base_footprint_link">
+<sdf version='1.6'>
+  <model name='hexa_y6_tilt'>
+    <link name='Base_link'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.0246 -0 0.124822 0 -0 0</pose>
+        <mass>0.944869</mass>
+        <inertia>
+          <ixx>0.00161854</ixx>
+          <ixy>1.36808e-08</ixy>
+          <ixz>0.000246977</ixz>
+          <iyy>0.00275272</iyy>
+          <iyz>-4.90332e-08</iyz>
+          <izz>0.00229199</izz>
+        </inertia>
+      </inertial>
+      <collision name='Base_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexa_y6_tilt/meshes/Base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Base_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexa_y6_tilt/meshes/Base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
 
-  </link>
-  <link
-    name="Base_link">
-    <inertial>
-      <origin
-        xyz="0.036678 5.0961E-06 -0.021447"
-        rpy="0 0 0" />
-      <mass
-        value="0.91595" />
-      <inertia
-        ixx="0.0016132"
-        ixy="1.3686E-08"
-        ixz="0.00024698"
-        iyy="0.0027471"
-        iyz="-4.903E-08"
-        izz="0.0022891" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/Base_link.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.91765 0.91765 0.91765 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/Base_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="Base_link_joint"
-    type="fixed">
-    <origin
-      xyz="0 0 0.147"
-      rpy="0 0 0" />
-    <parent
-      link="Base_footprint_link" />
-    <child
-      link="Base_link" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
-  <link
-    name="LM_link">
-    <inertial>
-      <origin
-        xyz="-6.57669405046413E-10 0.0153245007163398 -2.10989685477721E-08"
-        rpy="0 0 0" />
-      <mass
-        value="0.0120353834916806" />
-      <inertia
-        ixx="4.58132865727774E-06"
-        ixy="1.34703653030261E-09"
-        ixz="-3.42567253685726E-12"
-        iyy="4.30978786793619E-06"
-        iyz="-3.30644025012009E-12"
-        izz="1.71649712459976E-06" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/LM_link.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/LM_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="LM_joint"
-    type="continuous">
-    <origin
-      xyz="0.087556 0.27081 0.05707"
-      rpy="0 0 0" />
-    <parent
-      link="Base_link" />
-    <child
-      link="LM_link" />
-    <axis
-      xyz="0 1 0" />
-  </joint>
-  <link
-    name="M1_link">
-    <inertial>
-      <origin
-        xyz="-0.000270784572531158 2.12416256365477E-05 0.006988964939414"
-        rpy="0 0 0" />
-      <mass
-        value="0.00911525763525604" />
-      <inertia
-        ixx="5.00633134504264E-07"
-        ixy="9.73880382917894E-10"
-        ixz="1.57426820418243E-09"
-        iyy="4.94906263160118E-07"
-        iyz="6.26525078544308E-10"
-        izz="6.68862725831074E-07" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/M1_link.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/M1_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="M1_joint"
-    type="fixed">
-    <origin
-      xyz="0 0.01775 0.0275"
-      rpy="0 0 0" />
-    <parent
-      link="LM_link" />
-    <child
-      link="M1_link" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
-  <link
-    name="R1_link">
-    <inertial>
-      <origin
-        xyz="4.00947503154114E-06 3.73881937248965E-06 -0.00827037613230674"
-        rpy="0 0 0" />
-      <mass
-        value="0.020295142429237" />
-      <inertia
-        ixx="2.52367820762825E-05"
-        ixy="-1.16195501686504E-05"
-        ixz="8.45032113587821E-11"
-        iyy="7.12780309575709E-06"
-        iyz="1.45081548655319E-10"
-        izz="3.18262465233434E-05" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/R1_link.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.776470588235294 0.756862745098039 0.737254901960784 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/R1_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="R1_joint"
-    type="continuous">
-    <origin
-      xyz="0 0 0.0273486675707345"
-      rpy="0 0 0" />
-    <parent
-      link="M1_link" />
-    <child
-      link="R1_link" />
-    <axis
-      xyz="0 0 1" />
-  </joint>
-  <link
-    name="M2_link">
-    <inertial>
-      <origin
-        xyz="-2.12416256364228E-05 0.000270784572529326 -0.0069889649394146"
-        rpy="0 0 0" />
-      <mass
-        value="0.0091152576352585" />
-      <inertia
-        ixx="4.94906263160178E-07"
-        ixy="9.73880382927953E-10"
-        ixz="6.26525078542291E-10"
-        iyy="5.00633134504365E-07"
-        iyz="1.57426820419168E-09"
-        izz="6.68862725831193E-07" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/M2_link.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/M2_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="M2_joint"
-    type="fixed">
-    <origin
-      xyz="0 0.0177500000000005 -0.0274999999999864"
-      rpy="0 0 0" />
-    <parent
-      link="LM_link" />
-    <child
-      link="M2_link" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
-  <link
-    name="R2_link">
-    <inertial>
-      <origin
-        xyz="-4.99252273573891E-06 -2.26673323105997E-06 0.00678718579927654"
-        rpy="0 0 0" />
-      <mass
-        value="0.0202951424342138" />
-      <inertia
-        ixx="2.57220569748716E-05"
-        ixy="-1.12246312606507E-05"
-        ixz="1.66501210940522E-10"
-        iyy="6.64252822067154E-06"
-        iyz="2.21748641946469E-11"
-        izz="3.18262465469124E-05" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/R2_link.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.294117647058824 0.294117647058824 0.294117647058824 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/R2_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="R2_joint"
-    type="continuous">
-    <origin
-      xyz="0 0 -0.0273486675707345"
-      rpy="0 0 0" />
-    <parent
-      link="M2_link" />
-    <child
-      link="R2_link" />
-    <axis
-      xyz="0 0 -1" />
-  </joint>
-  <link
-    name="RM_link">
-    <inertial>
-      <origin
-        xyz="0.0187976715850453 -0.0153245007163392 -0.0344562499421324"
-        rpy="0 0 0" />
-      <mass
-        value="0.0120353834916806" />
-      <inertia
-        ixx="4.58132865727775E-06"
-        ixy="-1.3470365302975E-09"
-        ixz="3.42567254354336E-12"
-        iyy="4.30978786793619E-06"
-        iyz="-3.30644024429751E-12"
-        izz="1.71649712459977E-06" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/RM_link.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/RM_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="RM_joint"
-    type="continuous">
-    <origin
-      xyz="0.068759 -0.27081 0.091527"
-      rpy="0 0 0" />
-    <parent
-      link="Base_link" />
-    <child
-      link="RM_link" />
-    <axis
-      xyz="0 1 0" />
-  </joint>
-  <link
-    name="M5_link">
-    <inertial>
-      <origin
-        xyz="0.0187976715850452 0.0024254992836607 -0.0619562499421325"
-        rpy="0 0 0" />
-      <mass
-        value="0.0120353834916806" />
-      <inertia
-        ixx="4.58132865727776E-06"
-        ixy="-1.34703653029766E-09"
-        ixz="3.42567254180171E-12"
-        iyy="4.3097878679362E-06"
-        iyz="-3.30644023809547E-12"
-        izz="1.71649712459977E-06" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/M5_link.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/M5_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="M5_joint"
-    type="fixed">
-    <origin
-      xyz="0 -0.01775 0.0275"
-      rpy="0 0 0" />
-    <parent
-      link="RM_link" />
-    <child
-      link="M5_link" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
-  <link
-    name="R5_link">
-    <inertial>
-      <origin
-        xyz="-5.2897252309364E-06 -1.43435257493607E-06 -0.00827037577574272"
-        rpy="0 0 0" />
-      <mass
-        value="0.0202951434139552" />
-      <inertia
-        ixx="2.71721313619988E-05"
-        ixy="-9.81027683900459E-06"
-        ixz="-1.42298122275876E-10"
-        iyy="5.19314932772154E-06"
-        iyz="-8.9262725752431E-11"
-        izz="3.18269419065188E-05" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/R5_link.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.294117647058824 0.294117647058824 0.294117647058824 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/R5_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="R5_joint"
-    type="continuous">
-    <origin
-      xyz="0.018797672242944 0 -0.00710760347038014"
-      rpy="0 0 0" />
-    <parent
-      link="M5_link" />
-    <child
-      link="R5_link" />
-    <axis
-      xyz="0 0 1" />
-  </joint>
-  <link
-    name="M6_link">
-    <inertial>
-      <origin
-        xyz="-0.382681377021205 0.288289242829688 -0.0435157355995068"
-        rpy="0 0 0" />
-      <mass
-        value="0.00911525902424762" />
-      <inertia
-        ixx="4.94906339929653E-07"
-        ixy="9.73907428274681E-10"
-        ixz="-6.2652507853495E-10"
-        iyy="5.0063314760445E-07"
-        iyz="-1.57426830394887E-09"
-        izz="6.68862811270512E-07" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/M6_link.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/M6_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="M6_joint"
-    type="fixed">
-    <origin
-      xyz="0 -0.01775 -0.0275"
-      rpy="0 0 0" />
-    <parent
-      link="RM_link" />
-    <child
-      link="M6_link" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
-  <link
-    name="R6_link">
-    <inertial>
-      <origin
-        xyz="-5.08259623765994E-06 2.05674130882016E-06 0.006787185784981"
-        rpy="0 0 0" />
-      <mass
-        value="0.0202951424707648" />
-      <inertia
-        ixx="2.41729809691288E-05"
-        ixy="-1.23754161502838E-05"
-        ixz="1.30889521331956E-10"
-        iyy="8.19160455179534E-06"
-        iyz="-1.05411886428309E-10"
-        izz="3.18262468719815E-05" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/R6_link.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.294117647058824 0.294117647058824 0.294117647058824 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/R6_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="R6_joint"
-    type="continuous">
-    <origin
-      xyz="0.0187976722429451 0 -0.0618049386118497"
-      rpy="0 0 0" />
-    <parent
-      link="M6_link" />
-    <child
-      link="R6_link" />
-    <axis
-      xyz="0 0 -1" />
-  </joint>
-  <link
-    name="BM_link">
-    <inertial>
-      <origin
-        xyz="-0.0129923414448369 1.98839650300542E-09 8.88693614044559E-08"
-        rpy="0 0 0" />
-      <mass
-        value="0.0106915875443211" />
-      <inertia
-        ixx="4.39926466609323E-06"
-        ixy="-5.21060866041327E-12"
-        ixz="-1.33572424811535E-11"
-        iyy="4.59442862366294E-06"
-        iyz="-3.606586435877E-12"
-        izz="1.54041187287349E-06" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/BM_link.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/BM_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="BM_joint"
-    type="fixed">
-    <origin
-      xyz="-0.300729786182335 0 0.055"
-      rpy="0 0 0" />
-    <parent
-      link="Base_link" />
-    <child
-      link="BM_link" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
-  <link
-    name="M3_link">
-    <inertial>
-      <origin
-        xyz="-2.12416256364367E-05 -0.000270784572529825 0.006988964939414"
-        rpy="0 0 0" />
-      <mass
-        value="0.00911525763525688" />
-      <inertia
-        ixx="4.94906263160134E-07"
-        ixy="-9.73880382941128E-10"
-        ixz="-6.26525078539355E-10"
-        iyy="5.00633134504281E-07"
-        iyz="1.57426820418372E-09"
-        izz="6.68862725831092E-07" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/M3_link.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/M3_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="M3_joint"
-    type="fixed">
-    <origin
-      xyz="-0.0132141962811088 0 0.0275"
-      rpy="0 0 0" />
-    <parent
-      link="BM_link" />
-    <child
-      link="M3_link" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
-  <link
-    name="R3_link">
-    <inertial>
-      <origin
-        xyz="5.46073162893679E-06 -4.83505256082539E-07 -0.00827037576824878"
-        rpy="0 0 0" />
-      <mass
-        value="0.0202951434373117" />
-      <inertia
-        ixx="2.81515869845566E-05"
-        ixy="-8.58814855054943E-06"
-        ixz="1.64455068820146E-10"
-        iyy="4.21369389009603E-06"
-        iyz="3.39150825421095E-11"
-        izz="3.18269420913008E-05" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/R3_link.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.294117647058824 0.294117647058824 0.294117647058824 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/R3_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="R3_joint"
-    type="continuous">
-    <origin
-      xyz="0 0 0.0273486675707345"
-      rpy="0 0 0" />
-    <parent
-      link="M3_link" />
-    <child
-      link="R3_link" />
-    <axis
-      xyz="0 0 1" />
-  </joint>
-  <link
-    name="M4_link">
-    <inertial>
-      <origin
-        xyz="2.12416223985268E-05 -0.00027078453126847 -0.00698896455839565"
-        rpy="0 0 0" />
-      <mass
-        value="0.00911525902424762" />
-      <inertia
-        ixx="4.94906339929653E-07"
-        ixy="9.73907428274687E-10"
-        ixz="-6.2652507853494E-10"
-        iyy="5.0063314760445E-07"
-        iyz="-1.57426830394888E-09"
-        izz="6.68862811270511E-07" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/M4_link.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/M4_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="M4_joint"
-    type="fixed">
-    <origin
-      xyz="-0.0132141962811088 0 -0.0275"
-      rpy="0 0 0" />
-    <parent
-      link="BM_link" />
-    <child
-      link="M4_link" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
-  <link
-    name="R4_link">
-    <inertial>
-      <origin
-        xyz="1.79429866864478E-06 -5.17579374981203E-06 0.0067871854244108"
-        rpy="0 0 0" />
-      <mass
-        value="0.0202951434198161" />
-      <inertia
-        ixx="2.57219387957647E-05"
-        ixy="-1.12247380109884E-05"
-        ixz="-6.63897108998723E-12"
-        iyy="6.64265568667245E-06"
-        iyz="1.67602796750695E-10"
-        izz="3.18262558298122E-05" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/R4_link.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.294117647058824 0.294117647058824 0.294117647058824 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://hexa_y6_tilt/meshes/R4_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="R4_joint"
-    type="continuous">
-    <origin
-      xyz="0 0 -0.0273486675707345"
-      rpy="0 0 0" />
-    <parent
-      link="M4_link" />
-    <child
-      link="R4_link" />
-    <axis
-      xyz="0 0 -1" />
-  </joint>
-  <plugin name='rosbag' filename='libgazebo_multirotor_base_plugin.so'>
-      <robotNamespace/>
-      <linkName>base_link</linkName>
+    <link name='hexa_y6_tilt/imu_link'>
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.015</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name='hexa_y6_tilt/imu_joint' type='revolute'>
+      <child>hexa_y6_tilt/imu_link</child>
+      <parent>Base_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <link name='LM_link'>
+      <pose frame=''>0.086208 0.27081 0.201 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-8.8e-05 0.016873 -0 0 -0 0</pose>
+        <mass>0.0302659</mass>
+        <inertia>
+          <ixx>5.57687e-06</ixx>
+          <ixy>3.2948e-09</ixy>
+          <ixz>2.19737e-09</ixz>
+          <iyy>5.30533e-06</iyy>
+          <iyz>2.19749e-09</iyz>
+          <izz>3.05422e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='LM_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexa_y6_tilt/meshes/LM_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='LM_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexa_y6_tilt/meshes/LM_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name='LM_joint' type='revolute'>
+      <child>LM_link</child>
+      <parent>Base_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <!-- -0/+120 2.12 deg. -->
+          <lower>-0 </lower>
+          <upper> 0 </upper>
+        </limit>
+        <dynamics>
+          <damping>1.000</damping>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+
+    <link name='rotor_0'>
+      <pose frame=''>0.086208 0.28856 0.255849 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>4e-06 4e-06 -0.008794 0 -0 0</pose>
+        <mass>0.02172</mass>
+        <inertia>
+          <ixx>2.53176e-05</ixx>
+          <ixy>-1.16195e-05</ixy>
+          <ixz>-2.99065e-11</ixz>
+          <iyy>7.20866e-06</iyy>
+          <iyz>3.0171e-11</iyz>
+          <izz>3.18278e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='rotor_0_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexa_y6_tilt/meshes/rotor_0.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='rotor_0_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexa_y6_tilt/meshes/rotor_0.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='rotor_0_joint' type='revolute'>
+      <child>rotor_0</child>
+      <parent>LM_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <link name='rotor_1'>
+      <pose frame=''>0.086208 0.28856 0.146151 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-5e-06 -2e-06 0.007408 0 -0 0</pose>
+        <mass>0.02172</mass>
+        <inertia>
+          <ixx>2.58029e-05</ixx>
+          <ixy>-1.12246e-05</ixy>
+          <ixz>1.64661e-11</ixz>
+          <iyy>6.72338e-06</iyy>
+          <iyz>-3.93351e-11</iyz>
+          <izz>3.18278e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='rotor_1_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexa_y6_tilt/meshes/rotor_1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='rotor_1_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexa_y6_tilt/meshes/rotor_1.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='rotor_1_joint' type='revolute'>
+      <child>rotor_1</child>
+      <parent>LM_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <link name='RM_link'>
+      <pose frame=''>0.086208 -0.27081 0.201 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>8.8e-05 -0.016698 0 0 -0 0</pose>
+        <mass>0.0302659</mass>
+        <inertia>
+          <ixx>5.57687e-06</ixx>
+          <ixy>-3.2948e-09</ixy>
+          <ixz>2.20422e-09</ixz>
+          <iyy>5.30533e-06</iyy>
+          <iyz>-2.2041e-09</iyz>
+          <izz>3.05422e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='RM_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexa_y6_tilt/meshes/RM_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='RM_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexa_y6_tilt/meshes/RM_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name='RM_joint' type='revolute'>
+      <child>RM_link</child>
+      <parent>Base_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <!-- -0/+120 2.12 deg. -->
+          <lower> -0 </lower>
+          <upper>0 </upper>
+        </limit>
+        <dynamics>
+          <damping>1.000</damping>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+
+    <link name='rotor_4'>
+      <pose frame=''>0.086208 -0.28856 0.255849 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0 6e-06 -0.008794 0 -0 0</pose>
+        <mass>0.02172</mass>
+        <inertia>
+          <ixx>2.53176e-05</ixx>
+          <ixy>-1.16196e-05</ixy>
+          <ixz>-4.25331e-11</ixz>
+          <iyy>7.20875e-06</iyy>
+          <iyz>-1.48144e-12</iyz>
+          <izz>3.18278e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='rotor_4_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexa_y6_tilt/meshes/rotor_4.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='rotor_4_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexa_y6_tilt/meshes/rotor_4.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='rotor_4_joint' type='revolute'>
+      <child>rotor_4</child>
+      <parent>RM_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <link name='rotor_5'>
+      <pose frame=''>0.086208 -0.28856 0.146151 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-5e-06 2e-06 0.007408 0 -0 0</pose>
+        <mass>0.02172</mass>
+        <inertia>
+          <ixx>2.42539e-05</ixx>
+          <ixy>-1.23754e-05</ixy>
+          <ixz>-1.71058e-11</ixz>
+          <iyy>8.27246e-06</iyy>
+          <iyz>-3.91537e-11</iyz>
+          <izz>3.18278e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='rotor_5_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexa_y6_tilt/meshes/rotor_5.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='rotor_5_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexa_y6_tilt/meshes/rotor_5.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='rotor_5_joint' type='revolute'>
+      <child>rotor_5</child>
+      <parent>RM_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <link name='rotor_2'>
+      <pose frame=''>-0.31529 0 0.25378 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>6e-06 -0 -0.008794 0 -0 0</pose>
+        <mass>0.02172</mass>
+        <inertia>
+          <ixx>2.82325e-05</ixx>
+          <ixy>-8.58815e-06</ixy>
+          <ixz>2.51906e-12</ixz>
+          <iyy>4.29455e-06</iyy>
+          <iyz>4.23251e-11</iyz>
+          <izz>3.18285e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='rotor_2_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexa_y6_tilt/meshes/rotor_2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='rotor_2_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexa_y6_tilt/meshes/rotor_2.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='rotor_2_joint' type='revolute'>
+      <child>rotor_2</child>
+      <parent>Base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <link name='rotor_3'>
+      <pose frame=''>-0.31529 0 0.14408 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>2e-06 -5e-06 0.007408 0 -0 0</pose>
+        <mass>0.02172</mass>
+        <inertia>
+          <ixx>2.58028e-05</ixx>
+          <ixy>-1.12247e-05</ixy>
+          <ixz>4.06554e-11</ixz>
+          <iyy>6.72352e-06</iyy>
+          <iyz>1.24988e-11</iyz>
+          <izz>3.18278e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='rotor_3_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexa_y6_tilt/meshes/rotor_3.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='rotor_3_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexa_y6_tilt/meshes/rotor_3.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='rotor_3_joint' type='revolute'>
+      <child>rotor_3</child>
+      <parent>Base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <include>
+      <uri>model://gps</uri>
+      <pose>0 0 0 0 0 0</pose>
+      <name>gps</name>
+    </include>
+    <joint name='gps_joint' type='fixed'>
+      <child>gps::link</child>
+      <parent>Base_link</parent>
+    </joint>
+
+    <plugin name='rosbag' filename='libgazebo_multirotor_base_plugin.so'>
+      <robotNamespace></robotNamespace>
+      <linkName>Base_link</linkName>
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
-  </plugin>
-  <plugin name='front_left_top_motor_model' filename='libgazebo_motor_model.so'>
-      <robotNamespace></robotNamespace>
-      <jointName>R1_joint</jointName>
-      <linkName>R1_link</linkName>
-      <turningDirection>cw</turningDirection>
-      <timeConstantUp>0.0125</timeConstantUp>
-      <timeConstantDown>0.025</timeConstantDown>
-      <maxRotVelocity>1500</maxRotVelocity>
-      <motorConstant>2e-05</motorConstant>
-      <momentConstant>0.06</momentConstant>
-      <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
-      <motorNumber>0</motorNumber>
-      <rotorDragCoefficient>0.0000806428</rotorDragCoefficient>
-      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
-      <motorSpeedPubTopic>/motor_speed/0</motorSpeedPubTopic>
-      <rotorVelocitySlowdownSim>20</rotorVelocitySlowdownSim>
-    </plugin>
-    <plugin name='front_left_bottom_motor_model' filename='libgazebo_motor_model.so'>
-      <robotNamespace></robotNamespace>
-      <jointName>R2_joint</jointName>
-      <linkName>R2_link</linkName>
-      <turningDirection>cw</turningDirection>
-      <timeConstantUp>0.0125</timeConstantUp>
-      <timeConstantDown>0.025</timeConstantDown>
-      <maxRotVelocity>1500</maxRotVelocity>
-      <motorConstant>2e-05</motorConstant>
-      <momentConstant>0.06</momentConstant>
-      <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
-      <motorNumber>0</motorNumber>
-      <rotorDragCoefficient>0.0000806428</rotorDragCoefficient>
-      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
-      <motorSpeedPubTopic>/motor_speed/0</motorSpeedPubTopic>
-      <rotorVelocitySlowdownSim>20</rotorVelocitySlowdownSim>
     </plugin>
 
-
-    <plugin name='back_top_motor_model' filename='libgazebo_motor_model.so'>
+    <plugin name='front_left_top_motor_model' filename='libgazebo_motor_model.so'>
       <robotNamespace></robotNamespace>
-      <jointName>R3_joint</jointName>
-      <linkName>R3_link</linkName>
+      <jointName>rotor_0_joint</jointName>
+      <linkName>rotor_0</linkName>
       <turningDirection>cw</turningDirection>
       <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
-      <maxRotVelocity>1500</maxRotVelocity>
+      <maxRotVelocity>750</maxRotVelocity>
       <motorConstant>2e-05</motorConstant>
       <momentConstant>0.06</momentConstant>
       <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
-      <motorNumber>1</motorNumber>
+      <motorNumber>4</motorNumber>
       <rotorDragCoefficient>0.0000806428</rotorDragCoefficient>
       <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
-      <motorSpeedPubTopic>/motor_speed/1</motorSpeedPubTopic>
-      <rotorVelocitySlowdownSim>20</rotorVelocitySlowdownSim>
+      <motorSpeedPubTopic>/motor_speed/4</motorSpeedPubTopic>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
     </plugin>
-    <plugin name='back_bottom_motor_model' filename='libgazebo_motor_model.so'>
+    <plugin name='front_left__bottom_motor_model' filename='libgazebo_motor_model.so'>
       <robotNamespace></robotNamespace>
-      <jointName>R4_joint</jointName>
-      <linkName>R4_link</linkName>
+      <jointName>rotor_1_joint</jointName>
+      <linkName>rotor_1</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>750</maxRotVelocity>
+      <motorConstant>2e-05</motorConstant>
+      <momentConstant>0.06</momentConstant>
+      <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+      <motorNumber>5</motorNumber>
+      <rotorDragCoefficient>0.0000806428</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <motorSpeedPubTopic>/motor_speed/5</motorSpeedPubTopic>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+    </plugin>
+
+   <plugin name='back_top_motor_model' filename='libgazebo_motor_model.so'>
+      <robotNamespace></robotNamespace>
+      <jointName>rotor_2_joint</jointName>
+      <linkName>rotor_2</linkName>
       <turningDirection>cw</turningDirection>
       <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
-      <maxRotVelocity>1500</maxRotVelocity>
+      <maxRotVelocity>750</maxRotVelocity>
       <motorConstant>2e-05</motorConstant>
       <momentConstant>0.06</momentConstant>
       <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
@@ -929,17 +546,16 @@
       <rotorDragCoefficient>0.0000806428</rotorDragCoefficient>
       <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
       <motorSpeedPubTopic>/motor_speed/2</motorSpeedPubTopic>
-      <rotorVelocitySlowdownSim>20</rotorVelocitySlowdownSim>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
     </plugin>
-
-    <plugin name='front_right_top_motor_model' filename='libgazebo_motor_model.so'>
+    <plugin name='back_bottom_motor_model' filename='libgazebo_motor_model.so'>
       <robotNamespace></robotNamespace>
-      <jointName>R5_joint</jointName>
-      <linkName>R5_link</linkName>
-      <turningDirection>cw</turningDirection>
+      <jointName>rotor_3_joint</jointName>
+      <linkName>rotor_3</linkName>
+      <turningDirection>ccw</turningDirection>
       <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
-      <maxRotVelocity>1500</maxRotVelocity>
+      <maxRotVelocity>750</maxRotVelocity>
       <motorConstant>2e-05</motorConstant>
       <momentConstant>0.06</momentConstant>
       <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
@@ -947,16 +563,17 @@
       <rotorDragCoefficient>0.0000806428</rotorDragCoefficient>
       <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
       <motorSpeedPubTopic>/motor_speed/3</motorSpeedPubTopic>
-      <rotorVelocitySlowdownSim>20</rotorVelocitySlowdownSim>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
     </plugin>
-    <plugin name='front_right_bottom_motor_model' filename='libgazebo_motor_model.so'>
+
+    <plugin name='front_right_top_motor_model' filename='libgazebo_motor_model.so'>
       <robotNamespace></robotNamespace>
-      <jointName>R6_joint</jointName>
-      <linkName>R6_link</linkName>
+      <jointName>rotor_4_joint</jointName>
+      <linkName>rotor_4</linkName>
       <turningDirection>cw</turningDirection>
       <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
-      <maxRotVelocity>1500</maxRotVelocity>
+      <maxRotVelocity>750</maxRotVelocity>
       <motorConstant>2e-05</motorConstant>
       <momentConstant>0.06</momentConstant>
       <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
@@ -964,17 +581,27 @@
       <rotorDragCoefficient>0.0000806428</rotorDragCoefficient>
       <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
       <motorSpeedPubTopic>/motor_speed/0</motorSpeedPubTopic>
-      <rotorVelocitySlowdownSim>20</rotorVelocitySlowdownSim>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
     </plugin>
-    <include>
-      <uri>model://gps</uri>
-      <pose>0.1 0 0 0 0 0</pose>
-      <name>gps0</name>
-    </include>
-    <joint name='gps0_joint' type='fixed'>
-      <child>gps0::link</child>
-      <parent>Base_link</parent>
-    </joint>
+    <plugin name='front_right_bottom_motor_model' filename='libgazebo_motor_model.so'>
+      <robotNamespace></robotNamespace>
+      <jointName>rotor_5_joint</jointName>
+      <linkName>rotor_5</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>750</maxRotVelocity>
+      <motorConstant>2e-05</motorConstant>
+      <momentConstant>0.06</momentConstant>
+      <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+      <motorNumber>1</motorNumber>
+      <rotorDragCoefficient>0.0000806428</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <motorSpeedPubTopic>/motor_speed/1</motorSpeedPubTopic>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+    </plugin>
+
+
     <plugin name='groundtruth_plugin' filename='libgazebo_groundtruth_plugin.so'>
       <robotNamespace/>
     </plugin>
@@ -990,21 +617,6 @@
       <robotNamespace/>
       <pubRate>50</pubRate>
       <baroTopic>/baro</baroTopic>
-      <baroDriftPaPerSec>0</baroDriftPaPerSec>
-    </plugin>
-
-    <plugin name='gazebo_imu_plugin' filename='libgazebo_imu_plugin.so'>
-      <robotNamespace></robotNamespace>
-      <linkName>Base_link</linkName>
-      <imuTopic>/imu</imuTopic>
-      <gyroscopeNoiseDensity>0.0003394</gyroscopeNoiseDensity>
-      <gyroscopeRandomWalk>3.8785e-05</gyroscopeRandomWalk>
-      <gyroscopeBiasCorrelationTime>1000.0</gyroscopeBiasCorrelationTime>
-      <gyroscopeTurnOnBiasSigma>0.0087</gyroscopeTurnOnBiasSigma>
-      <accelerometerNoiseDensity>0.004</accelerometerNoiseDensity>
-      <accelerometerRandomWalk>0.006</accelerometerRandomWalk>
-      <accelerometerBiasCorrelationTime>300.0</accelerometerBiasCorrelationTime>
-      <accelerometerTurnOnBiasSigma>0.196</accelerometerTurnOnBiasSigma>
     </plugin>
 
     <plugin name='mavlink_interface' filename='libgazebo_mavlink_interface.so'>
@@ -1013,8 +625,8 @@
       <magSubTopic>/mag</magSubTopic>
       <baroSubTopic>/baro</baroSubTopic>
       <mavlink_addr>INADDR_ANY</mavlink_addr>
-      <mavlink_tcp_port>{{ mavlink_tcp_port }}</mavlink_tcp_port>
-      <mavlink_udp_port>{{ mavlink_udp_port }}</mavlink_udp_port>
+      <mavlink_tcp_port>4560</mavlink_tcp_port>
+      <mavlink_udp_port>14560</mavlink_udp_port>
       <serialEnabled>false</serialEnabled>
       <serialDevice>/dev/ttyACM0</serialDevice>
       <baudRate>921600</baudRate>
@@ -1028,99 +640,96 @@
       <use_tcp>true</use_tcp>
       <motorSpeedCommandPubTopic>/gazebo/command/motor_speed</motorSpeedCommandPubTopic>
       <control_channels>
+        <channel name="rotor0">
+          <input_index>4</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>750</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>100</zero_position_armed>
+          <joint_control_type>velocity</joint_control_type>
+        </channel>
+
         <channel name="rotor1">
-          <input_index>0</input_index>
+          <input_index>5</input_index>
           <input_offset>0</input_offset>
-          <input_scaling>1500</input_scaling>
+          <input_scaling>750</input_scaling>
           <zero_position_disarmed>0</zero_position_disarmed>
-          <zero_position_armed>0</zero_position_armed>
+          <zero_position_armed>100</zero_position_armed>
           <joint_control_type>velocity</joint_control_type>
-          <joint_name>R1_joint</joint_name>
         </channel>
+
         <channel name="rotor2">
-          <input_index>1</input_index>
-          <input_offset>0</input_offset>
-          <input_scaling>1500</input_scaling>
-          <zero_position_disarmed>0</zero_position_disarmed>
-          <zero_position_armed>0</zero_position_armed>
-          <joint_control_type>velocity</joint_control_type>
-          <joint_name>R2_joint</joint_name>
-        </channel>
-        <channel name="rotor3">
           <input_index>2</input_index>
           <input_offset>0</input_offset>
-          <input_scaling>1500</input_scaling>
+          <input_scaling>750</input_scaling>
           <zero_position_disarmed>0</zero_position_disarmed>
-          <zero_position_armed>0</zero_position_armed>
+          <zero_position_armed>100</zero_position_armed>
           <joint_control_type>velocity</joint_control_type>
-          <joint_name>R3_joint</joint_name>
         </channel>
+
+        <channel name="rotor3">
+          <input_index>3</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>750</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>100</zero_position_armed>
+          <joint_control_type>velocity</joint_control_type>
+        </channel>
+
         <channel name="rotor4">
-          <input_index>3</input_index>
+          <input_index>0</input_index>
           <input_offset>0</input_offset>
-          <input_scaling>1500</input_scaling>
+          <input_scaling>750</input_scaling>
           <zero_position_disarmed>0</zero_position_disarmed>
-          <zero_position_armed>0</zero_position_armed>
+          <zero_position_armed>100</zero_position_armed>
           <joint_control_type>velocity</joint_control_type>
-          <joint_name>R4_joint</joint_name>
         </channel>
+
         <channel name="rotor5">
-          <input_index>3</input_index>
+          <input_index>1</input_index>
           <input_offset>0</input_offset>
-          <input_scaling>1500</input_scaling>
+          <input_scaling>750</input_scaling>
           <zero_position_disarmed>0</zero_position_disarmed>
-          <zero_position_armed>0</zero_position_armed>
+          <zero_position_armed>100</zero_position_armed>
           <joint_control_type>velocity</joint_control_type>
-          <joint_name>R5_joint</joint_name>
-        </channel><channel name="rotor6">
-          <input_index>3</input_index>
-          <input_offset>0</input_offset>
-          <input_scaling>1500</input_scaling>
-          <zero_position_disarmed>0</zero_position_disarmed>
-          <zero_position_armed>0</zero_position_armed>
-          <joint_control_type>velocity</joint_control_type>
-          <joint_name>R6_joint</joint_name>
         </channel>
 
         <channel name="LM_tilt">
-          <input_index>4</input_index>
-          <input_offset>0.785398</input_offset>
-          <input_scaling>0.785398</input_scaling>
+          <input_index>6</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>1</input_scaling>
           <zero_position_disarmed>0</zero_position_disarmed>
           <zero_position_armed>0</zero_position_armed>
           <joint_control_type>position</joint_control_type>
-          <joint_name>LM_joint</joint_name>
-           <joint_control_pid>
-            <p>10</p>
-            <i>0</i>
-            <d>0</d>
-            <iMax>0.0</iMax>
-            <iMin>0.0</iMin>
-            <cmdMax>2</cmdMax>
-            <cmdMin>-2</cmdMin>
-            <errMax>0.2</errMax>
-          </joint_control_pid>
         </channel>
+
         <channel name="RM_tilt">
-          <input_index>5</input_index>
-          <input_offset>0.785398</input_offset>
-          <input_scaling>0.785398</input_scaling>
+          <input_index>7</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>1</input_scaling>
           <zero_position_disarmed>0</zero_position_disarmed>
           <zero_position_armed>0</zero_position_armed>
           <joint_control_type>position</joint_control_type>
-          <joint_name>RM_joint</joint_name>
-           <joint_control_pid>
-            <p>10</p>
-            <i>0</i>
-            <d>0</d>
-            <iMax>0.0</iMax>
-            <iMin>0.0</iMin>
-            <cmdMax>2</cmdMax>
-            <cmdMin>-2</cmdMin>
-            <errMax>0.2</errMax>
-          </joint_control_pid>
         </channel>
 
       </control_channels>
     </plugin>
-</robot>
+
+    <static>0</static>
+
+    <plugin name='gazebo_imu_plugin' filename='libgazebo_imu_plugin.so'>
+      <robotNamespace></robotNamespace>
+      <linkName>hexa_y6_tilt/imu_link</linkName>
+      <imuTopic>/imu</imuTopic>
+      <gyroscopeNoiseDensity>0.0003394</gyroscopeNoiseDensity>
+      <gyroscopeRandomWalk>3.8785e-05</gyroscopeRandomWalk>
+      <gyroscopeBiasCorrelationTime>1000.0</gyroscopeBiasCorrelationTime>
+      <gyroscopeTurnOnBiasSigma>0.0087</gyroscopeTurnOnBiasSigma>
+      <accelerometerNoiseDensity>0.004</accelerometerNoiseDensity>
+      <accelerometerRandomWalk>0.006</accelerometerRandomWalk>
+      <accelerometerBiasCorrelationTime>300.0</accelerometerBiasCorrelationTime>
+      <accelerometerTurnOnBiasSigma>0.196</accelerometerTurnOnBiasSigma>
+    </plugin>
+
+  </model>
+</sdf>

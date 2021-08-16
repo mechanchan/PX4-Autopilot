@@ -33,9 +33,16 @@ param set-default VT_IDLE_PWM_MC 1100
 param set-default VT_TYPE 1
 param set-default VT_MOT_ID 1234
 param set-default VT_FW_MOT_OFFID 24
-set MAV_TYPE 21
 
-set MIXER quad_x
-set MIXER_AUX vtol_TTTTAAER
+param set-default MAV_TYPE 19
+set MAV_TYPE 19
+set MIXER vtol_tailsitter_duo
 
 set PWM_OUT 1234
+
+# set MAV_TYPE 21
+#
+# set MIXER quad_x
+# set MIXER_AUX vtol_TTTTAAER
+#
+# set PWM_OUT 1234

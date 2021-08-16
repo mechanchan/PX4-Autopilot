@@ -27,6 +27,10 @@ param set-default FW_ARSP_MODE 1
 
 param set-default MAV_TYPE 19
 set MAV_TYPE 19
-set MIXER vtol_tailsitter_duo
 
-set PWM_OUT 1234
+#ADD
+
+set MIXER firefly6
+set MIXER_AUX firefly6
+
+set PWM_OUT 123456

@@ -118,6 +118,7 @@ px4_add_romfs_files(
 	# [11000, 11999] Hexa Cox
 	11001_hexa_cox
 	11002_hexa_y6_tilt
+	11003_hexa_vtol
 
 	# [12000, 12999] Octo Cox
 	12001_octo_cox

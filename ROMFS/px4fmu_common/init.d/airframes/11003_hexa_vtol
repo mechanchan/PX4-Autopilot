@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# @name Hexa VTOL
+#
+# @type Hexarotor Coaxial
+# @class Copter
+#
+# @output MAIN1 motor right
+# @output MAIN2 motor left
+# @output MAIN5 elevon right
+# @output MAIN6 elevon left
+#
+# @board px4_fmu-v2 exclude
+# @board bitcraze_crazyflie exclude
+#
+
+. ${R}etc/init.d/rc.mc_defaults
+
+param set-default VT_MOT_COUNT 2
+param set-default VT_TYPE 0
+param set-default FW_ARSP_MODE 1
+
+set MAV_TYPE 19
+set MIXER quad_y6_vtol
+
+set PWM_OUT 123456

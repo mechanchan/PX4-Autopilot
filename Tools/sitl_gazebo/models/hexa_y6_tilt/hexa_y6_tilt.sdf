@@ -68,6 +68,16 @@
       </axis>
     </joint>
 
+    <include>
+      <uri>model://airspeed</uri>
+      <pose>0 0 0 0 0 0</pose>
+      <name>airspeed</name>
+    </include>
+    <joint name='airspeed_joint' type='fixed'>
+      <child>airspeed::link</child>
+      <parent>Base_link</parent>
+    </joint>
+
     <link name='LM_link'>
       <pose frame=''>0.086208 0.27081 0.201 0 -0 0</pose>
       <inertial>
@@ -108,12 +118,13 @@
       <axis>
         <xyz>0 1 0</xyz>
         <limit>
-          <!-- -0/+120 2.12 deg. -->
           <lower>-0 </lower>
-          <upper> 0 </upper>
+          <upper> 1.5 </upper>
         </limit>
         <dynamics>
-          <damping>1.000</damping>
+          <friction>1.0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>0</use_parent_model_frame>
       </axis>
@@ -264,12 +275,13 @@
       <axis>
         <xyz>0 1 0</xyz>
         <limit>
-          <!-- -0/+120 2.12 deg. -->
-          <lower> -0 </lower>
-          <upper>0 </upper>
+          <lower> 0 </lower>
+          <upper> 1.5 </upper>
         </limit>
         <dynamics>
-          <damping>1.000</damping>
+          <friction>1.0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>0</use_parent_model_frame>
       </axis>
@@ -601,7 +613,6 @@
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
     </plugin>
 
-
     <plugin name='groundtruth_plugin' filename='libgazebo_groundtruth_plugin.so'>
       <robotNamespace/>
     </plugin>
@@ -645,7 +656,7 @@
           <input_offset>0</input_offset>
           <input_scaling>750</input_scaling>
           <zero_position_disarmed>0</zero_position_disarmed>
-          <zero_position_armed>100</zero_position_armed>
+          <zero_position_armed>0</zero_position_armed>
           <joint_control_type>velocity</joint_control_type>
         </channel>
 
@@ -654,7 +665,7 @@
           <input_offset>0</input_offset>
           <input_scaling>750</input_scaling>
           <zero_position_disarmed>0</zero_position_disarmed>
-          <zero_position_armed>100</zero_position_armed>
+          <zero_position_armed>0</zero_position_armed>
           <joint_control_type>velocity</joint_control_type>
         </channel>
 
@@ -663,7 +674,7 @@
           <input_offset>0</input_offset>
           <input_scaling>750</input_scaling>
           <zero_position_disarmed>0</zero_position_disarmed>
-          <zero_position_armed>100</zero_position_armed>
+          <zero_position_armed>0</zero_position_armed>
           <joint_control_type>velocity</joint_control_type>
         </channel>
 
@@ -672,7 +683,7 @@
           <input_offset>0</input_offset>
           <input_scaling>750</input_scaling>
           <zero_position_disarmed>0</zero_position_disarmed>
-          <zero_position_armed>100</zero_position_armed>
+          <zero_position_armed>0</zero_position_armed>
           <joint_control_type>velocity</joint_control_type>
         </channel>
 
@@ -681,7 +692,7 @@
           <input_offset>0</input_offset>
           <input_scaling>750</input_scaling>
           <zero_position_disarmed>0</zero_position_disarmed>
-          <zero_position_armed>100</zero_position_armed>
+          <zero_position_armed>0</zero_position_armed>
           <joint_control_type>velocity</joint_control_type>
         </channel>
 
@@ -690,32 +701,52 @@
           <input_offset>0</input_offset>
           <input_scaling>750</input_scaling>
           <zero_position_disarmed>0</zero_position_disarmed>
-          <zero_position_armed>100</zero_position_armed>
+          <zero_position_armed>0</zero_position_armed>
           <joint_control_type>velocity</joint_control_type>
         </channel>
 
         <channel name="LM_tilt">
           <input_index>6</input_index>
-          <input_offset>0</input_offset>
-          <input_scaling>1</input_scaling>
+          <input_offset>-0.785398</input_offset>
+          <input_scaling>0.785398</input_scaling>
           <zero_position_disarmed>0</zero_position_disarmed>
           <zero_position_armed>0</zero_position_armed>
           <joint_control_type>position</joint_control_type>
+          <joint_name>LM_joint</joint_name>
+           <joint_control_pid>
+            <p>1</p>
+            <i>0</i>
+            <d>0</d>
+            <iMax>0.0</iMax>
+            <iMin>0.0</iMin>
+            <cmdMax>2</cmdMax>
+            <cmdMin>-2</cmdMin>
+            <errMax>0.2</errMax>
+          </joint_control_pid>
         </channel>
 
         <channel name="RM_tilt">
           <input_index>7</input_index>
-          <input_offset>0</input_offset>
-          <input_scaling>1</input_scaling>
+          <input_offset>-0.785398</input_offset>
+          <input_scaling>0.785398</input_scaling>
           <zero_position_disarmed>0</zero_position_disarmed>
           <zero_position_armed>0</zero_position_armed>
           <joint_control_type>position</joint_control_type>
+          <joint_name>RM_joint</joint_name>
+           <joint_control_pid>
+            <p>1</p>
+            <i>0</i>
+            <d>0</d>
+            <iMax>0.0</iMax>
+            <iMin>0.0</iMin>
+            <cmdMax>2</cmdMax>
+            <cmdMin>-2</cmdMin>
+            <errMax>0.2</errMax>
+          </joint_control_pid>
         </channel>
 
       </control_channels>
     </plugin>
-
-    <static>0</static>
 
     <plugin name='gazebo_imu_plugin' filename='libgazebo_imu_plugin.so'>
       <robotNamespace></robotNamespace>
@@ -730,6 +761,8 @@
       <accelerometerBiasCorrelationTime>300.0</accelerometerBiasCorrelationTime>
       <accelerometerTurnOnBiasSigma>0.196</accelerometerTurnOnBiasSigma>
     </plugin>
+
+    <static>0</static>
 
   </model>
 </sdf>

@@ -16,8 +16,6 @@
 #
 # @output AUX1 Motor tilt front left
 # @output AUX2 Motor tilt front right
-# @output AUX3 Motor front wheel left
-# @output AUX4 Motor front wheel right
 #
 # @board px4_fmu-v2 exclude
 # @board bitcraze_crazyflie exclude
@@ -25,7 +23,6 @@
 
 . ${R}etc/init.d/rc.mc_defaults
 
-# param Custom Required
 param set-default VT_MOT_COUNT 6
 param set-default VT_FW_MOT_OFFID 3, 4
 param set-default VT_IDLE_PWM_MC 1200

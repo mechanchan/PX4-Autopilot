@@ -16,8 +16,6 @@
 #
 # @output AUX1 Motor tilt front left
 # @output AUX2 Motor tilt front right
-# @output AUX3 Motor front wheel left
-# @output AUX4 Motor front wheel right
 #
 # @board px4_fmu-v5 exclude
 # @board bitcraze_crazyflie exclude

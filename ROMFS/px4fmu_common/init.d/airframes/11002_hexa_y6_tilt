@@ -17,15 +17,15 @@
 # @output AUX1 Motor tilt front left
 # @output AUX2 Motor tilt front right
 #
-# @board px4_fmu-v2 exclude
+# @board px4_fmu-v5 exclude
 # @board bitcraze_crazyflie exclude
 #
-
 . ${R}etc/init.d/rc.mc_defaults
 
 param set-default VT_MOT_COUNT 6
-param set-default VT_FW_MOT_OFFID 3, 4
+param set-default VT_FW_MOT_OFFID 2346
 param set-default VT_IDLE_PWM_MC 1200
+param set-default VT_MOT_ID 123456
 param set-default VT_TYPE 0
 param set-default VT_B_TRANS_DUR 1.0
 param set-default VT_FW_DIFTHR_EN 1
@@ -37,13 +37,13 @@ param set-default VT_TILT_FW 1.0
 param set-default VT_TILT_MC 0.0
 param set-default VT_TILT_TRANS 0.45
 param set-default VT_TRANS_MIN_TM 1.2
-param set-default VT_TRANS_P2_DUR 1.3
+
+# param set-default VT_TRANS_P2_DUR 1.3
 param set-default FW_ARSP_MODE 1
-set MAV_TYPE 20
 
-# Custom Mixer
+param set-default MAV_TYPE 19
+set MAV_TYPE 19
+
 set MIXER quad_y6_vtol
-# Mixer
-set MIXER hexa_cox
-
+set MIXER_AUX test_y6_vtol
 set PWM_OUT 12345678

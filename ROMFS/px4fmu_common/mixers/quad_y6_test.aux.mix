@@ -1,0 +1,15 @@
+Mixer for Tailsitter with tilt mechanism Y6 multi-copter
+===========================================================
+
+Servo mixer
+--------------
+Channel 5 connects to the right (starboard) Servo.
+Channel 6 connects to the left (port) Servo.
+
+M: 2
+S: 1 0   10000   10000    0 -10000  10000
+S: 1 1   10000   10000    0 -10000  10000
+
+M: 2
+S: 1 0   10000   10000    0 -10000  10000
+S: 1 1  -10000  -10000    0 -10000  1000

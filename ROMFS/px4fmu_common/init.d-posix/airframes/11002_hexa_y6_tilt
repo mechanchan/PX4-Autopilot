@@ -1,0 +1,52 @@
+#!/bin/sh
+#
+# @name Hexa Y6 Tilt copter
+#
+# @type Hexarotor Coaxial
+# @class Copter
+#
+# @maintainer Soongsil UNIV. IMS Lab. Drone-Team <alphago@soongsil.ac.kr>
+#
+# @output MAIN1 front right top, CW; angle:60; direction:CW
+# @output MAIN2 front right bottom, CCW; angle:60; direction:CCW
+# @output MAIN3 back top, CW; angle:180; direction:CW
+# @output MAIN4 back bottom, CCW; angle:180; direction:CCW
+# @output MAIN5 front left top, CW; angle:-60; direction:CW
+# @output MAIN6 front left bottom, CCW;angle:-60; direction:CCW
+#
+# @output AUX1 Motor tilt front left
+# @output AUX2 Motor tilt front right
+# @output AUX3 Motor front wheel left
+# @output AUX4 Motor front wheel right
+#
+# @board px4_fmu-v5 exclude
+# @board bitcraze_crazyflie exclude
+#
+
+. ${R}etc/init.d/rc.vtol_defaults
+
+# param Custom Required
+param set-default VT_MOT_COUNT 6
+param set-default VT_FW_MOT_OFFID 2346
+param set-default VT_IDLE_PWM_MC 1200
+param set-default VT_MOT_ID 123456
+
+param set-default VT_TYPE 0
+param set-default VT_B_TRANS_DUR 1.0
+param set-default VT_FW_DIFTHR_EN 1
+param set-default VT_FW_DIFTHR_SC 0.17
+param set-default VT_FW_PERM_STAB 1
+param set-default VT_F_TRANS_DUR 1.2
+param set-default VT_F_TR_OL_TM 4.0
+param set-default VT_TILT_FW 1.0
+param set-default VT_TILT_MC 0.0
+param set-default VT_TILT_TRANS 0.45
+param set-default VT_TRANS_MIN_TM 1.2
+param set-default FW_ARSP_MODE 1
+
+param set-default MAV_TYPE 19
+set MAV_TYPE 19
+
+set MIXER hexa_cox
+
+set PWM_OUT 12345678

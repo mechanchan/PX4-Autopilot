@@ -3,15 +3,15 @@
     <link name='Base_link'>
       <pose frame=''>0 0 0 0 -0 0</pose>
       <inertial>
-        <pose frame=''>0.0246 -0 0.124822 0 -0 0</pose>
-        <mass>0.944869</mass>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1.7415</mass>
         <inertia>
-          <ixx>0.00161854</ixx>
-          <ixy>1.36808e-08</ixy>
-          <ixz>0.000246977</ixz>
-          <iyy>0.00275272</iyy>
-          <iyz>-4.90332e-08</iyz>
-          <izz>0.00229199</izz>
+          <ixx>0.002778</ixx>
+          <ixy>-1.2129e-07</ixy>
+          <ixz>0.00054685</ixz>
+          <iyy>0.0063021</iyy>
+          <iyz>-1.0672e-07</iyz>
+          <izz>0.0063939</izz>
         </inertia>
       </inertial>
       <collision name='Base_link_collision'>
@@ -66,16 +66,6 @@
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
-    </joint>
-
-    <include>
-      <uri>model://airspeed</uri>
-      <pose>0 0 0 0 0 0</pose>
-      <name>airspeed</name>
-    </include>
-    <joint name='airspeed_joint' type='fixed'>
-      <child>airspeed::link</child>
-      <parent>Base_link</parent>
     </joint>
 
     <link name='LM_link'>
@@ -166,6 +156,12 @@
             <uri>model://hexa_y6_tilt/meshes/rotor_0.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Blue</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='rotor_0_joint' type='revolute'>
@@ -323,6 +319,12 @@
             <uri>model://hexa_y6_tilt/meshes/rotor_4.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Blue</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='rotor_4_joint' type='revolute'>

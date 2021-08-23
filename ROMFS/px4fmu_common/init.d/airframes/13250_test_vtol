@@ -5,12 +5,14 @@
 # @type VTOL Duo Tailsitter
 # @class VTOL
 #
-# @output MAIN1 motor right
-# @output MAIN2 motor left
-# @output AUX1 elevon right
-# @output AUX2 elevon left
-#
-# @maintainer Roman Bapst <roman@px4.io>
+# @output MAIN1 front right top, CW; angle:60; direction:CW
+# @output MAIN2 front right bottom, CCW; angle:60; direction:CCW
+# @output MAIN3 back top, CW; angle:180; direction:CW
+# @output MAIN4 back bottom, CCW; angle:180; direction:CCW
+# @output MAIN5 front left top, CW; angle:-60; direction:CW
+# @output MAIN6 front left bottom, CCW;angle:-60; direction:CCW
+# @output AUX1 servo right
+# @output AUX2 servo left
 #
 # @board px4_fmu-v2 exclude
 # @board bitcraze_crazyflie exclude
@@ -18,14 +20,30 @@
 
 . ${R}etc/init.d/rc.vtol_defaults
 
-param set-default VT_ELEV_MC_LOCK 0
-param set-default VT_MOT_COUNT 2
-param set-default VT_TYPE 0
-param set-default FW_ARSP_MODE 1
+# parameter reference https://dev.px4.io/master/en/advanced/parameter_reference.html
+# parameter not set is specified as default value
+# See airframe 11002 for details
+
+param set-default VT_MOT_COUNT 6
+param set-default VT_FW_MOT_OFFID 34  #The channel number of motors that must be turned off in fixed wing mode
+param set-default VT_IDLE_PWM_MC 1200  #Idle speed of VTOL when in multicopter mode
+
+param set-default VT_IDLE_PWM_MC 1200
+param set-default VT_MOT_ID 123456  #The channel number of motors which provide lift during hover
+
+param set-default VT_ELEV_MC_LOCK 0  #Lock elevons in multicopter mode Comment: If set to 1 the elevons are locked in multicopter mode
+
+param set-default VT_TYPE 0 #tailsitter
+param set-default FW_ARSP_MODE 1 # Disable airflow sensor
+
+param set-default VT_TILT_FW 1.0  #Position of tilt servo in fw mode
+param set-default VT_TILT_MC 0.0  #Position of tilt servo in mc mode
+param set-default VT_TILT_TRANS 0.45  #Position of tilt servo in transition mode
+
 param set-default MAV_TYPE 19
 
-set MAV_TYPE 19
-set MIXER vtol_tailsitter_test
-set MIXER_AUX vtol_tailsitter_duo
+set MAV_TYPE 19 #Co-axial motor type is missing, so similar duo tilesitter type is used
+set MIXER vtol_tailsitter_test  #main out mixer
+set MIXER_AUX vtol_tailsitter_test  #aux mixer
 
-set PWM_OUT 1234
+set PWM_OUT 12345678

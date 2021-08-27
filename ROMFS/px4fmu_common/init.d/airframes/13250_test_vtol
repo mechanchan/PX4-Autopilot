@@ -24,24 +24,26 @@
 # parameter not set is specified as default value
 # See airframe 11002 for details
 
-param set-default CBRK_AIRSPD_CHK 162128
-param set-default FW_ARSP_MODE 1 # Disable airspeed sensor
+
 
 param set-default VT_MOT_COUNT 6
 param set-default VT_FW_MOT_OFFID 34  #The channel number of motors that must be turned off in fixed wing mode
 param set-default VT_IDLE_PWM_MC 1200  #Idle speed of VTOL when in multicopter mode
 
-param set-default VT_MOT_ID 1256  #The channel number of motors which provide lift during hover
+param set-default VT_MOT_ID 123456  #The channel number of motors which provide lift during hover
 param set-default VT_ELEV_MC_LOCK 1  #Lock elevons in multicopter mode Comment: If set to 1 the elevons are locked in multicopter mode
 
-param set-default VT_TYPE 0 # 0 = tailsitter , 1 = tiltrotor
+param set-default VT_TYPE 1 # 0 = tailsitter , 1 = tiltrotor
 
 param set-default VT_TILT_FW 1  #Position of tilt servo in fw mode
 param set-default VT_TILT_MC 0  #Position of tilt servo in mc mode
 param set-default VT_TILT_TRANS 0.45  #Position of tilt servo in transition mode
 
+param set-default CBRK_AIRSPD_CHK 162128
+param set-default FW_ARSP_MODE 1 # Disable airspeed sensor
+
 set MAV_TYPE 21
 set MIXER vtol_tailsitter_test  #main out mixer
-set MIXER_AUX vtol_tailsitter_duo  #aux mixer
+set MIXER_AUX vtol_tailsitter_test #aux mixer
 
 set PWM_OUT 123456

@@ -68,16 +68,6 @@
       </axis>
     </joint>
 
-    <include>
-      <uri>model://airspeed</uri>
-      <pose>0 0 0 0 0 0</pose>
-      <name>airspeed</name>
-    </include>
-    <joint name='airspeed_joint' type='fixed'>
-      <child>airspeed::link</child>
-      <parent>Base_link</parent>
-    </joint>
-
     <link name='LM_link'>
       <pose frame=''>0.086208 0.27081 0.201 0 -0 0</pose>
       <inertial>
@@ -119,7 +109,7 @@
         <xyz>0 1 0</xyz>
         <limit>
           <lower>-0 </lower>
-          <upper> 1.5 </upper>
+          <upper> 0 </upper>
         </limit>
         <dynamics>
           <friction>1.0</friction>
@@ -281,8 +271,8 @@
       <axis>
         <xyz>0 1 0</xyz>
         <limit>
-          <lower> 0 </lower>
-          <upper> 1.5 </upper>
+          <lower> -0 </lower>
+          <upper> 0 </upper>
         </limit>
         <dynamics>
           <friction>1.0</friction>
@@ -555,7 +545,7 @@
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
     </plugin>
 
-   <plugin name='back_top_motor_model' filename='libgazebo_motor_model.so'>
+    <plugin name='back_top_motor_model' filename='libgazebo_motor_model.so'>
       <robotNamespace></robotNamespace>
       <jointName>rotor_2_joint</jointName>
       <linkName>rotor_2</linkName>
@@ -717,45 +707,6 @@
           <joint_control_type>velocity</joint_control_type>
         </channel>
 
-        <channel name="LM_tilt">
-          <input_index>6</input_index>
-          <input_offset>-0.785398</input_offset>
-          <input_scaling>0.785398</input_scaling>
-          <zero_position_disarmed>0</zero_position_disarmed>
-          <zero_position_armed>0</zero_position_armed>
-          <joint_control_type>position</joint_control_type>
-          <joint_name>LM_joint</joint_name>
-           <joint_control_pid>
-            <p>1</p>
-            <i>0</i>
-            <d>0</d>
-            <iMax>0.0</iMax>
-            <iMin>0.0</iMin>
-            <cmdMax>2</cmdMax>
-            <cmdMin>-2</cmdMin>
-            <errMax>0.2</errMax>
-          </joint_control_pid>
-        </channel>
-
-        <channel name="RM_tilt">
-          <input_index>7</input_index>
-          <input_offset>-0.785398</input_offset>
-          <input_scaling>0.785398</input_scaling>
-          <zero_position_disarmed>0</zero_position_disarmed>
-          <zero_position_armed>0</zero_position_armed>
-          <joint_control_type>position</joint_control_type>
-          <joint_name>RM_joint</joint_name>
-           <joint_control_pid>
-            <p>1</p>
-            <i>0</i>
-            <d>0</d>
-            <iMax>0.0</iMax>
-            <iMin>0.0</iMin>
-            <cmdMax>2</cmdMax>
-            <cmdMin>-2</cmdMin>
-            <errMax>0.2</errMax>
-          </joint_control_pid>
-        </channel>
 
       </control_channels>
     </plugin>

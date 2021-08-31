@@ -5,10 +5,15 @@
 # @type VTOL Duo Tailsitter
 # @class VTOL
 #
-# @output MAIN1 motor right
-# @output MAIN2 motor left
-# @output MAIN5 elevon right
-# @output MAIN6 elevon left
+# @output MAIN1 front right top, CW; angle:60; direction:CW
+# @output MAIN2 front right bottom, CCW; angle:60; direction:CCW
+# @output MAIN3 front left top, CW; angle:-60; direction:CW
+# @output MAIN4 front left bottom, CCW;angle:-60; direction:CCW
+#
+# @output AUX1 servo left
+# @output AUX2 servo right
+# @output AUX3 elevon right
+# @output AUX4 elevon left
 #
 # @maintainer Roman Bapst <roman@px4.io>
 #
@@ -18,9 +23,9 @@
 
 . ${R}etc/init.d/rc.vtol_defaults
 
+param set-default VT_MOT_COUNT 4
 
 param set-default VT_ELEV_MC_LOCK 0
-param set-default VT_MOT_COUNT 4
 param set-default VT_MOT_ID 1234
 param set-default VT_TYPE 0
 
@@ -29,7 +34,8 @@ param set-default FW_ARSP_MODE 1
 
 set MAV_TYPE 19
 
-set MIXER firefly6
-set MIXER_AUX vtol_tailsitter_test
+set MIXER vtol_tailsitter_duo
+set MIXER_AUX vtol_tailsitter_duo
 
-set PWM_OUT 1234
+set PWM_OUT 123456
+set PWM_AUX_OUT 1234

@@ -43,6 +43,7 @@ param set-default CBRK_AIRSPD_CHK 162128
 param set-default FW_ARSP_MODE 1 # Disable airspeed sensor
 
 set MAV_TYPE 21
+
 set MIXER vtol_tailsitter_test  #main out mixer
 set MIXER_AUX vtol_tailsitter_test #aux mixer
 

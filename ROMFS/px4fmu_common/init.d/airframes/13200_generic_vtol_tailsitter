@@ -20,17 +20,16 @@
 
 
 param set-default VT_ELEV_MC_LOCK 0
-param set-default VT_MOT_COUNT 2
+param set-default VT_MOT_COUNT 4
+param set-default VT_MOT_ID 1234
 param set-default VT_TYPE 0
-# add FW_ARSP for test
+
+param set-default CBRK_AIRSPD_CHK 162128
 param set-default FW_ARSP_MODE 1
 
-param set-default MAV_TYPE 19
 set MAV_TYPE 19
 
-#ADD
-
 set MIXER firefly6
-set MIXER_AUX firefly6
+set MIXER_AUX vtol_tailsitter_test
 
-set PWM_OUT 123456
+set PWM_OUT 1234

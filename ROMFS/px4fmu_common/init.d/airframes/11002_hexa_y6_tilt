@@ -25,4 +25,4 @@
 set MIXER hexa_cox
 set MIXER_AUX hexa_cox
 
-set PWM_OUT 12345678
+set PWM_OUT 123456

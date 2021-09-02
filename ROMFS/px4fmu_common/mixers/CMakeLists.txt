@@ -55,7 +55,6 @@ px4_add_romfs_files(
 	fw_generic_wing.main.mix
 	FX79.main.mix
 	generic_diff_rover.main.mix
-
 	hexa_cox.main.mix
 	hexa_cox.aux.mix
 	hexa_+.main.mix

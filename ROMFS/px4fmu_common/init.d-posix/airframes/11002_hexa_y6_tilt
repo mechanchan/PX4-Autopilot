@@ -16,17 +16,13 @@
 #
 # @output AUX1 Motor tilt front left
 # @output AUX2 Motor tilt front right
-# @output AUX3 Motor front wheel left
-# @output AUX4 Motor front wheel right
 #
-# @board px4_fmu-v5 exclude
+# @board px4_fmu-v2 exclude
 # @board bitcraze_crazyflie exclude
 #
-
 . ${R}etc/init.d/rc.mc_defaults
 
-# param Custom Required
-
 set MIXER hexa_cox
+set MIXER_AUX hexa_cox
 
 set PWM_OUT 123456

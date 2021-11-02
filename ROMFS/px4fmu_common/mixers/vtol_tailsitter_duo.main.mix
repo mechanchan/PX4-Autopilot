@@ -1,32 +1,31 @@
 Tailsitter duo mixer
 ============================
 
-Right Upper rotor (CCW)
-Mixing between yaw and thrust
--------------
-M: 2
-S: 0 2  10000  10000      0 -10000  10000
-S: 0 3      0  20000 -10000 -10000  10000
-
-Right Lower rotor (CW)
+Right Upper rotor (CW)
 Mixing between yaw and thrust
 -------------
 M: 2
 S: 0 2  -10000  -10000      0 -10000  10000
 S: 0 3      0  20000 -10000 -10000  10000
 
-Left Upper rotor (CCW)
+Right Lower rotor (CCW)
 Mixing between yaw and thrust
 -------------
 M: 2
 S: 0 2  10000  10000      0 -10000  10000
 S: 0 3      0  20000 -10000 -10000  10000
 
-Left Lower rotor (CW)
+Left Upper rotor (CW)
 Mixing between yaw and thrust
 -------------
 M: 2
 S: 0 2  -10000  -10000      0 -10000  10000
 S: 0 3      0  20000 -10000 -10000  10000
 
+Left Lower rotor (CCW)
+Mixing between yaw and thrust
+-------------
+M: 2
+S: 0 2  10000  10000      0 -10000  10000
+S: 0 3      0  20000 -10000 -10000  10000
 

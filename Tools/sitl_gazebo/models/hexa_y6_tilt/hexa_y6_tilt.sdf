@@ -108,8 +108,8 @@
       <axis>
         <xyz>0 1 0</xyz>
         <limit>
-          <lower>-0.785 </lower>
-          <upper> 0.785 </upper>
+          <lower>-0 </lower>
+          <upper> 0 </upper>
         </limit>
         <dynamics>
           <friction>1.0</friction>
@@ -271,8 +271,8 @@
       <axis>
         <xyz>0 1 0</xyz>
         <limit>
-          <lower> -0.785 </lower>
-          <upper> 0.785 </upper>
+          <lower> -0 </lower>
+          <upper> 0 </upper>
         </limit>
         <dynamics>
           <friction>1.0</friction>
@@ -705,26 +705,6 @@
           <zero_position_disarmed>0</zero_position_disarmed>
           <zero_position_armed>0</zero_position_armed>
           <joint_control_type>velocity</joint_control_type>
-        </channel>
-
-        <channel name="LM_tilt">
-          <input_index>6</input_index>
-          <input_offset>0</input_offset>
-          <input_scaling>1</input_scaling>
-          <zero_position_disarmed>0</zero_position_disarmed>
-          <zero_position_armed>0</zero_position_armed>
-          <joint_control_type>position</joint_control_type>
-
-        </channel>
-        <channel name="RM_tilt">
-          <input_index>7</input_index>
-          <input_offset>0</input_offset>
-          <input_scaling>1</input_scaling>
-          <zero_position_disarmed>0</zero_position_disarmed>
-          <zero_position_armed>0</zero_position_armed>
-          <joint_control_type>position</joint_control_type>
-
-
         </channel>
 
       </control_channels>

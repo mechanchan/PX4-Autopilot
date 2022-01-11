@@ -1,7 +1,8 @@
 # PX4 Drone Autopilot
 
 ## Tilt Drone Development Project in the Intelligent Mechatronic System Lab. in the Department of Mechanical Engineering at Soongsil University
-## add Tilt Y6
+### Tilt-rotor dorne based PX4 Y6 airframe & VTOL Tailsitter
+### Project period : 21.04 ~
 
 [![Releases](https://img.shields.io/github/release/PX4/PX4-Autopilot.svg)](https://github.com/PX4/PX4-Autopilot/releases) [![DOI](https://zenodo.org/badge/22634/PX4/PX4-Autopilot.svg)](https://zenodo.org/badge/latestdoi/22634/PX4/PX4-Autopilot)
 
